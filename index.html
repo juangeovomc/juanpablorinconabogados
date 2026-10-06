@@ -1,0 +1,649 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Juan Pablo Rincón Abogados (Copy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Concepto: el expediente. Cada sección lleva su rótulo en el margen izquierdo,
+   como las anotaciones al margen de un escrito judicial; el contenido corre a la derecha.
+   Un solo mundo visual: azul de medianoche, tipografía marfil, filetes finos. */
+:root{
+  color-scheme:dark;
+  --fondo:#070f1e;
+  --fondo-2:#0b172c;
+  --superficie:#0f1e3a;
+  --azul:#355689;
+  --azul-claro:#a4bde8;
+  --marfil:#efece3;
+  --texto-2:#a2adc3;
+  --champan:#d3bb8b;
+  --linea:rgba(164,189,232,.15);
+  --linea-fuerte:rgba(164,189,232,.36);
+  --alerta:#e2a48f;
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Times New Roman",serif;
+  --sans:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--fondo);color:var(--marfil);
+  font-family:var(--sans);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:var(--azul-claro)}
+::selection{background:var(--azul);color:var(--marfil)}
+:focus-visible{outline:2px solid var(--azul-claro);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;text-wrap:balance;letter-spacing:-.005em}
+.pag{max-width:1240px;margin-inline:auto;padding-inline:clamp(18px,4.2vw,52px)}
+.rot{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--azul-claro)}
+.suave{color:var(--texto-2)}
+.num{font-variant-numeric:lining-nums tabular-nums}
+
+/* ---------- Botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  padding:17px 26px;border:1px solid var(--marfil);cursor:pointer;
+  background:var(--marfil);color:var(--fondo);
+  transition:background .25s,color .25s,border-color .25s;
+}
+.btn:hover{background:transparent;color:var(--marfil)}
+.btn.sec{background:transparent;color:var(--marfil);border-color:var(--linea-fuerte)}
+.btn.sec:hover{border-color:var(--marfil)}
+.btn .fl{font-family:var(--serif);font-size:18px;letter-spacing:0;transition:transform .25s}
+.btn:hover .fl{transform:translateX(4px)}
+
+/* ---------- Barra superior ---------- */
+.barra{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:rgba(7,15,30,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--linea);
+}
+.barra .pag{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:10px}
+.barra img{height:64px;width:auto;display:block}
+.barra nav{display:none;gap:34px}
+.barra nav a{font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--texto-2);transition:color .2s}
+.barra nav a:hover{color:var(--marfil)}
+.barra .btn{padding:13px 18px;font-size:11px}
+@media (min-width:980px){.barra nav{display:flex}}
+
+/* ---------- Inicio ---------- */
+.inicio{position:relative;overflow:hidden;border-bottom:1px solid var(--linea)}
+.inicio::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 88% -8%,rgba(53,86,137,.5),transparent 68%),
+    radial-gradient(700px 500px at -8% 108%,rgba(53,86,137,.2),transparent 70%),
+    linear-gradient(180deg,var(--fondo-2),var(--fondo));
+}
+.inicio .heroe{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:48px;padding-block:clamp(48px,7vw,96px)}
+@media (min-width:1040px){.inicio .heroe{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:72px;align-items:center}}
+.inicio h1{font-size:clamp(46px,6.6vw,96px);font-weight:400;margin-top:26px}
+.inicio h1 em{font-style:italic;color:var(--azul-claro)}
+.inicio .entrada{font-size:clamp(16px,1.4vw,18px);color:var(--texto-2);max-width:54ch;margin-top:30px}
+.inicio .acc{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.cifras{display:flex;flex-wrap:wrap;gap:14px 48px;margin-top:40px;padding-top:24px;border-top:1px solid var(--linea)}
+.cifras div{display:flex;align-items:baseline;gap:14px}
+.cifras b{font-family:var(--serif);font-weight:400;font-size:50px;line-height:1;color:var(--marfil)}
+.cifras span{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--texto-2);line-height:1.5}
+.inicio .dato{margin-top:22px;font-size:13px;color:var(--texto-2);max-width:54ch}
+.foto{position:relative;margin:0;min-width:0;justify-self:center;width:100%;max-width:520px}
+.foto::before{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--linea-fuerte);pointer-events:none}
+.foto .img{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--fondo-2)}
+@media (min-width:1040px){.foto .img{aspect-ratio:2/3}}
+.foto img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.foto .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,15,30,.12),rgba(7,15,30,0) 30%,rgba(7,15,30,0) 52%,rgba(7,15,30,.94));pointer-events:none}
+.foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,3vw,30px);display:flex;flex-direction:column;gap:8px}
+.foto figcaption strong{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3vw,38px);line-height:1.05}
+.banda{position:relative;padding-bottom:clamp(48px,6vw,84px);display:flex;flex-direction:column;gap:6px}
+.banda > .rot{padding-bottom:14px;border-bottom:1px solid var(--linea-fuerte)}
+.inicio .dato b{color:var(--marfil);font-weight:500}
+.indice{min-width:0;display:grid;grid-template-columns:minmax(0,1fr);column-gap:40px}
+@media (min-width:640px){.indice{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1040px){.indice{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.indice a{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--linea);text-decoration:none;color:var(--marfil);
+  transition:padding-left .25s,border-color .25s;
+}
+.indice a:hover{padding-left:10px;border-color:var(--azul-claro)}
+.indice .n{font-family:var(--serif);font-size:27px;line-height:1.1}
+.indice .d{grid-column:1;font-size:12.5px;color:var(--texto-2);line-height:1.5;margin-top:2px}
+.indice .fl{grid-row:1/3;grid-column:2;align-self:center;font-family:var(--serif);font-size:22px;color:var(--azul-claro)}
+@media (prefers-reduced-motion:no-preference){
+  .sube{animation:sube .9s cubic-bezier(.2,.7,.2,1) both}
+  .sube.r2{animation-delay:.12s}.sube.r3{animation-delay:.24s}
+  @keyframes sube{from{opacity:.001;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+/* ---------- Secciones con rótulo al margen ---------- */
+.sec-m{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;padding-block:clamp(64px,9vw,124px);border-bottom:1px solid var(--linea)}
+@media (min-width:980px){
+  .sec-m{grid-template-columns:176px minmax(0,1fr);gap:64px}
+  .sec-m > .rot{position:sticky;top:calc(env(safe-area-inset-top,0px) + 108px);align-self:start;padding-top:14px;border-top:1px solid var(--azul-claro)}
+}
+.cuerpo{min-width:0;display:flex;flex-direction:column;gap:44px}
+.cuerpo > header{display:flex;flex-direction:column;gap:20px}
+.cuerpo h2{font-size:clamp(34px,4.6vw,62px);font-weight:400;max-width:19ch}
+.cuerpo h2 em{font-style:italic;color:var(--azul-claro)}
+.cuerpo .entrada{color:var(--texto-2);max-width:62ch;font-size:16.5px}
+
+/* ---------- Áreas ---------- */
+.areas{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media (min-width:860px){.areas{grid-template-columns:240px minmax(0,1fr);gap:0}}
+.areas [role=tablist]{display:flex;flex-wrap:wrap;gap:8px}
+.areas [role=tab]{
+  font:500 13px/1.2 var(--sans);letter-spacing:.04em;color:var(--texto-2);text-align:left;
+  background:none;border:1px solid var(--linea);padding:11px 14px;cursor:pointer;transition:color .2s,border-color .2s,background .2s;
+}
+.areas [role=tab]:hover{color:var(--marfil);border-color:var(--linea-fuerte)}
+.areas [role=tab][aria-selected=true]{color:var(--fondo);background:var(--marfil);border-color:var(--marfil)}
+@media (min-width:860px){
+  .areas [role=tablist]{flex-direction:column;flex-wrap:nowrap;gap:0;border-right:1px solid var(--linea)}
+  .areas [role=tab]{border:0;border-right:2px solid transparent;margin-right:-1px;padding:15px 20px 15px 0;font-family:var(--serif);font-size:24px;letter-spacing:0}
+  .areas [role=tab][aria-selected=true]{background:none;color:var(--marfil);border-right-color:var(--azul-claro)}
+}
+.ficha{min-width:0;display:flex;flex-direction:column;gap:26px}
+@media (min-width:860px){.ficha{padding-left:52px}}
+.ficha h3{font-size:clamp(30px,3.4vw,44px);font-weight:400}
+.ficha p{color:var(--texto-2);max-width:58ch}
+.ficha ul{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--linea)}
+.ficha li{padding:13px 0;border-bottom:1px solid var(--linea);font-size:15px;display:flex;gap:14px}
+.ficha li::before{content:"";flex:none;width:14px;height:1px;background:var(--azul-claro);margin-top:13px}
+.ficha .normas{font-size:12px;letter-spacing:.06em;color:var(--texto-2)}
+.ficha .normas b{display:block;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--azul-claro);font-weight:600;margin-bottom:6px}
+
+/* ---------- 36 horas ---------- */
+.plazo{background:var(--fondo-2);border:1px solid var(--linea);padding:clamp(22px,3.4vw,44px);display:flex;flex-direction:column;gap:30px}
+.plazo-top{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;align-items:end}
+@media (min-width:820px){.plazo-top{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:48px}}
+.campo{display:flex;flex-direction:column;gap:8px;min-width:0}
+.campo label,.campo .lab{font-size:10.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--azul-claro)}
+.campo input,.campo select,.campo textarea{
+  width:100%;min-width:0;font:400 16px/1.4 var(--sans);color:var(--marfil);
+  background:var(--fondo);border:1px solid var(--linea-fuerte);border-radius:0;padding:13px 14px;
+}
+.campo textarea{resize:vertical;min-height:108px}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--azul-claro)}
+.vence{min-width:0}
+.vence .gr{font-family:var(--serif);font-size:clamp(26px,3.3vw,42px);line-height:1.12}
+.vence .ch{font-size:14px;color:var(--texto-2);margin-top:8px}
+.vence .ch.al{color:var(--alerta)}
+.regla{position:relative;height:10px;background:var(--fondo);border:1px solid var(--linea-fuerte)}
+.regla i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--azul),var(--azul-claro));width:0;transition:width .5s}
+.escala{display:flex;justify-content:space-between;margin-top:9px;font-size:11px;color:var(--texto-2)}
+.escala span{width:0;display:flex;justify-content:center;white-space:nowrap}
+.escala span:first-child{justify-content:flex-start}.escala span:last-child{justify-content:flex-end}
+@media (max-width:620px){.escala span:nth-child(even){visibility:hidden}}
+.nota{font-size:12.5px;color:var(--texto-2);max-width:78ch}
+.dos{display:grid;grid-template-columns:minmax(0,1fr);gap:44px}
+@media (min-width:860px){.dos{grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}}
+.lista-t h3{font-size:28px;margin-bottom:16px}
+.lista-t ol,.lista-t ul{border-top:1px solid var(--linea)}
+.lista-t li{padding:14px 0;border-bottom:1px solid var(--linea);font-size:15px;display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px}
+.lista-t li > b{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--azul-claro);line-height:1.2}
+.lista-t li small{display:block;font-size:12px;color:var(--texto-2);letter-spacing:.03em;margin-top:2px}
+
+/* ---------- Cómo trabajamos ---------- */
+.pasos{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--linea-fuerte)}
+.pasos li{padding:26px 0;border-bottom:1px solid var(--linea);display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px}
+.pasos b{font-family:var(--serif);font-size:44px;font-weight:400;line-height:.9;color:var(--azul-claro)}
+.pasos h3{font-size:25px;margin-bottom:8px}
+.pasos p{font-size:14.5px;color:var(--texto-2)}
+@media (min-width:1040px){
+  .pasos{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .pasos li{grid-template-columns:minmax(0,1fr);gap:18px;padding:28px 24px 8px 0;border-bottom:0;align-content:start}
+  .pasos h3{min-height:2.1em}
+  .pasos li + li{padding-left:24px;border-left:1px solid var(--linea)}
+}
+.cita{border-left:1px solid var(--champan);padding:6px 0 6px clamp(18px,3vw,36px);max-width:70ch}
+.cita p{font-family:var(--serif);font-size:clamp(23px,2.5vw,32px);line-height:1.3}
+.cita span{display:block;margin-top:12px;font-size:13px;color:var(--texto-2)}
+
+/* ---------- Programa ---------- */
+.niveles{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+@media (min-width:900px){.niveles{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}}
+.nivel{border:1px solid var(--linea);padding:32px 28px;display:flex;flex-direction:column;gap:22px;background:var(--fondo-2)}
+@media (min-width:900px){.nivel + .nivel{border-left:0}}
+.nivel.alto{background:var(--superficie);border-color:var(--champan)}
+@media (min-width:900px){.nivel.alto{border-left:1px solid var(--champan)}}
+.nivel h3{font-size:38px;font-weight:400}
+.nivel .rot{color:var(--champan)}
+.nivel .precio{font-family:var(--serif);font-size:34px;line-height:1}
+.nivel .precio small{font-family:var(--sans);font-size:12px;color:var(--texto-2);letter-spacing:.06em;margin-left:6px}
+.nivel ul{border-top:1px solid var(--linea)}
+.nivel li{padding:11px 0;border-bottom:1px solid var(--linea);font-size:14px;color:var(--texto-2)}
+.nivel li b{color:var(--marfil);font-weight:500}
+
+/* ---------- La firma ---------- */
+.firma{display:grid;grid-template-columns:minmax(0,1fr);gap:44px}
+@media (min-width:900px){.firma{grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:64px;align-items:start}}
+.oleo{margin:0;aspect-ratio:2/3;max-width:100%;overflow:hidden;border:1px solid var(--linea-fuerte);background:var(--fondo-2)}
+.oleo img{display:block;width:100%;height:100%;object-fit:cover}
+.equipo-t h3{font-size:30px;margin-bottom:12px}
+.equipo-t p{color:var(--texto-2);max-width:60ch}
+.firma .txt{display:flex;flex-direction:column;gap:30px;min-width:0}
+.firma .txt > p{color:var(--texto-2);max-width:60ch}
+.firma .txt > p b{color:var(--marfil);font-weight:500}
+.principios{display:flex;flex-wrap:wrap;gap:6px 30px}
+.principios li{font-family:var(--serif);font-size:24px;line-height:1.2}
+
+.equipo{border-top:1px solid var(--linea-fuerte)}
+.equipo div{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;padding:16px 0;border-bottom:1px solid var(--linea)}
+@media (min-width:640px){.equipo div{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:baseline}}
+.equipo dt{font-family:var(--serif);font-size:23px;line-height:1.2}
+.equipo dd{font-size:13.5px;color:var(--texto-2)}
+
+/* ---------- Contacto ---------- */
+.contacto{display:grid;grid-template-columns:minmax(0,1fr);gap:48px}
+@media (min-width:940px){.contacto{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px}}
+.form{display:flex;flex-direction:column;gap:20px;min-width:0}
+.form .fila{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media (min-width:600px){.form .fila{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.chk{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--texto-2);cursor:pointer}
+.chk input{width:18px;height:18px;margin-top:3px;accent-color:var(--azul-claro);flex:none}
+.previa{border:1px solid var(--linea);background:var(--fondo-2);padding:18px 20px;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--marfil)}
+.form .acc{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.oficina{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--linea-fuerte);min-width:0}
+.oficina div{padding:20px 0;border-bottom:1px solid var(--linea);display:flex;flex-direction:column;gap:6px}
+.oficina dd{font-family:var(--serif);font-size:25px;line-height:1.25;overflow-wrap:anywhere;user-select:all}
+.oficina dd.txt{user-select:auto}
+.oficina small{font-size:12.5px;color:var(--texto-2)}
+
+/* ---------- Pie ---------- */
+footer{padding-block:56px 44px}
+footer .pag{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+@media (min-width:860px){footer .pag{grid-template-columns:auto minmax(0,1fr);gap:64px;align-items:start}}
+footer img{height:104px;width:auto}
+footer p{font-size:12.5px;color:var(--texto-2);max-width:86ch}
+footer p + p{margin-top:12px}
+footer b{color:var(--marfil);font-weight:500}
+</style>
+
+<header class="barra">
+  <div class="pag">
+    <a href="#inicio" aria-label="Juan Pablo Rincón Abogados, inicio"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAErCAYAAACRqvc4AAAfCklEQVR4nO3d7ZWyTNet4fm84w6gQiAEQiAEQiAEQjAEQzAEQyAEQiCEysD9o4pdNJd2Kyzk6zzGYGCLLqqxmylfxf8ej4cAAFjb/63dAAAAJAIJALARBBIAYBMIJADAJhBIAIBNIJAAAJtAIAEANoFAAgBsAoEEANgEAgkAsAkEEgBgEwgkAMAmEEgAgE0gkAAAm0AgAQA2gUACAGwCgQQA2AQCCQCwCf+t3QDMdpXkDOv5L7/vr/d6SbcZtQHsxP8ej8fabcA8raRs5TYsLdO8wAOwA2wh7V8tqVJYabvBsFd+MHQKgetXaguAL2IL6ZgyhVDKJZWSitVa8rdmMHiFEAJwQgTSOWQKW1H1qq346apwbKhbtRUANoNAOpdMIQiKFdvQKARjt2IbAGwQp32fS6ewC++y0vyvcf7dSvMHsGFsIZ1Xqe+eTl1/eX4AdoYtpPO6KxxX+oaLCCMAfyCQzu2u5U90uCnsqgOAX7HLDlIIjXKBuq22fco5gA0hkCCFa5Za2V9QW8S6APAndtlBWqa/uLsIIwAfYAsJvUy2AZLL9vTuQuFYlI8/O8PaS/Nfru0Hz/ePu8GwZHuAyejLDr1O4aLVwqDWXfbXGmU6fiey3+CVPutWqcsmYHUEEoZa2QWStZvCijRXCic3GOM9TmEZ5oPnmsHQfrU1wACBhKHWqI43qjPWxGHIKYRSrhCmhQioTxVKX0RahS8Ud9GjBr6MY0gYyvXvCn+K0qjOFE7h2qp6pfkfyV1hy7RZtRU4Dc6yw5BfuwEGvELPEIX4hj9XqRBKjZa5Tg34gUDCkF+7AYZahVBqVm3FMeRKW0rFiu3AwbHLDkNONhfIltpWENy17IrUG9ZyhrWW0ohbiGABBBLGOh0vkKRlQqnSv7dY909e94qb8Lpnj91gyJTOpMs+aMsUF9FPIQwRSBjrdMxAcgptyoxrbplTCOFSyx0DahWCuVuoPk6EY0gY82s3YCFe9rfbcMb1rHml24zk+tnThZVcKZSAWQgknEmr8+5i6hR2seVx7I3rX3XeZQsjBBLO5qrjbgW+wyssg1z2HepWC9TEiRBIGPNrN2BhXst0bbQ3XuFMuVK2n3mpcKzOGdbESRBIOKP72g3YkEZ2PXT0coVl7Axr4gQIJJxRu3YDNsYr9cpgJRe77/AhAgln5MVpys9Usg2RwrgeDo5Awln5tRuwUbVst5RKhbP6gD8RSDgrv3YDNqyS7W7NWnTOijcQSDgrv3YDNq6S7TK6ipMc8AcCCWN+7QZ8iV+7ARvXyfaeUk4cT8IfCCSclV+7ATtwl/1JDqVhPRwMgQTgNxex6w5fQiDhrPzaDdgJL9uz5Jy4vTxeIJCAafzaDfiim2yv26rFVhKeIJAAvONiXK82rocDIJAAvOMu262kyrAWDoJAwhL82g14g1+7ATt0NazlRChhhEAC8K67bIO8MqyFAyCQALzLy75H8MywHnaOQALwibtxvdK4HnaMQALwiUa2JzeUhrWwcwQSgE81hrVysdsOEYEE4FONcb3CuB52ikDCWfm1G7BjjXG9wrgedopAAvApL9vjSLlhLewYgQRgitawViaOI0EEEoBpWuN6uXE97BCBBGCKzrheZlwPO0QgAZiiM66XG9fDDhFIAKbojOs543rYIQIJwBRetqGUGdbCThFIAKbq1m4AjoVAAjCVN6zlxG670yOQgOn82g1YWbd2A3AsBBKAqbxhLWdYCztFIAGYyq/dABwLgQRgKr92A3AsBBKALfBrNwDrI5AATOXXbgCOhUACsAVeBNzpEUgApnJrNwDHQiBhCX7tBmB3/NoNwPoIJABTOcNanWEt7BSBBGAqZ1jLG9bCThFIAKbKDGt1hrWwUwQSxvzaDcBuOMNanWEt7BSBBEzj127ABmSGtTrDWtgpAgnAVJlRHS8CCSKQAEyTyW6XXSe2OCECCcA0uWGt1rAWdoxAAjBFblirNayFHSOQAExRGNZqDGthxwgkAJ9ysttC6sQJDYgIJACfKgxrNYa1sHMEEoBPlYa17oa1sHMEEs7Kr92AnXKy20LqxBYSBggkLMGv3QAsppDd9Ud3ozo4CAIJwCcqw1o3w1o4AAIJwLty2e2uu4uz6zBCIAF4V21Y62pYCwdBIAF4Ry67s+sa0TsDniCQYM2v3QAs4mJY62pYCwdCIGHMr90AbE4pu2NHjTjVGy8QSAB+42S7RXMxrIWDIZAA/OYm2+uOWqNaOCACCUvwazcAJq6y7beuNqyFAyKQcFZ+7QZsXC3bi2AvYpnjDwQSgLFatsd6WnFmHd7w39oNALApF9nvWquM6+GgCCSM+ZXfj/VcZR8etegiCG8ikAA4hbPpCuO6d9GBKj7AMSSclV+7ARtRKBzjKYzrdmJXHT5EIMGaX7sBeItT2EV3l911Rj0v27vK4iTYZYcxv3YDsCinsOVSyz6IeqU4boQJCCRY69ZuwJv82g1YgVPYIsoXnEcpemPARP97PB5rtwHb4iRlcXB671u0j0MXB2/cpqXk+vk7usE0/+Tx+LnOvEXLc3r+mT577lNe+1wm2AgCCQCwCZzUAADYBAIJALAJBBIAJLnC8VOsgEACgKBSuJttvmorToyTGgAgnGXYKlwsfF2xHadGIAFAutyhXbUVJ7fkLrtC8/qyyvS6+5F8Zu0hp9AB5Kt5farQ7xcflpp3zUemsFuhjeObbLtpKWTbnUyt0NZWqb2VQf1Cy/SVliu0sVW4pqZZaD6fyhU+l0bLfO5zXBXa9kwmu3bWCr97F4e75vfBlyl93n3tq2yOI131+hbwTtv5/Lbj8XgsNTSPx8PPeH8d3++eTLvGablBOy+xln88HplBvXZQb9y+LD5fGrW3Gzy+G39uVvWGy2P4uJu5vPtaFm3sh2rU1ttgPlbLw+JzbweffTtzOVp+xs+WUb9M59R3j/R32f/O/TKoZ9TNRzWbwXLtHvPWL9nj9//N+vF6/XbaYemTGvyM97rR+Nm0bEb9vk41+LmeWa+v2buOpmWj8Zz6ZayTK31TLGfUVayRP3lsoVQ6g+mmf5f9p5xse4TIFT4vr9TWavB8Idu7qH7KxfFNP5djpnnHPC56vXXzqUL//g+50XiKm9KWaxYf55r/u9/juIr1iljzorTnZCo3eFzo9XLJZszjcPZwlp2bOO0dpdKKsZHNrqShXD9Xum40nqJ/bxvHndKKMptRV0r/NGUcX56+6jMujts49rJbAVqq4vii8LcwdFFod63lOiR9Vzd4fI3jbEa9QmlFPJUbPL7MrDWWK90io5bdl5BSod0X/fv3eFX4G8g0fZegG/180c/l4l687tT2GkjPnpuiVlpB3uJz5cyaTuGfp4o/X7T8t6F+Xt2MGpnS8aMmDoXslvVFYdlelJb17ekr/+Zk/4+cx3H7YnoTx4XxfD/lBo/LOG6N6055b6v0heZqWL+I4/vE97+Sx3H7Yno/v2zmfDo9Xy5uNIb2G0gWcoU/tnv8uYnjyqC2Vwo5p/SH6EbjOSqlAKnjPJuZ9aR/w6KSjSrWrBV+/0Y2HXE6gxpSWvH4F9O70eu+zcVxpXQSwUWhvRfD+lN5hc+30c8TTubW7d/fzazzqu4rlvO7yX65HNJeA6l/zs+oWw1qFUrfNnPZrXRqhT/sMtb1RnWltKuhUPpjn1O/HIwLpWVQzag5dI21LgrtLLSts4z82g14k1P6MiKlv7G5vEEN6efWgDOo5+PYotYnrOdXx/FlgdqHseWTGnrul2ndjJplfFwqrNivg+ml7NRxfJXNSQI+jm9KwVFq3kqpryOFld1dP49L5TNq925Ky7mKz12evnIdXRy7F9PzOG4XbscrPo7vSsdUpO0dFO+UPtebUnC6ifXaOC5+ec0UXRxnL6bnRvPxg/ldlPYO5KPp0LKB5Ga+v4vj/Mm0TOGDbCfWLvRzv3eltCtEmr9V4AePG6XrksqZdaW0XC8K7fcvXveJKo5vSsuikv1uzF4Xx8647hz3OK6eTMuUtkAbo/lN1cahlO2JFt7w/VeFz7jQ/BV7q3TmYzGz1lATx9WTaW7wfDuxvh+NpbBcWqV7jWFky1tITRyXSv90mdJxmduM2tVgfFNYGd2VdoNlsv3mWctuxWlVp+eUtrBqpWVxV1pOpcF8KqXP8hafu8+s6QZ1c80/tbhT+mKSKS2bJr6mnlHfmlf6v7is2I5XaqM6XumL4k3py2Q/TNUqban0Y6d0GYVTumB2Dj/6uf5j+rkteJHTqwvCPhnKx8+LP/vhNqOmizWaF9OLOL2aWL970b588LuUM9p/edheEFr+8fveZrb52ec39zP8re7Uz02PcDFj86JubbjMpwz95zD+/a7x+WJi3ftj/t9T9+LzvAyW39T2jX//4dA95l0U7Aa//3i4zmxv9nj9d1MP5uNmzudQw1J92Tmlrj0qg1qZfp7I0M6smev3W23/NX1qbaf5/WVZ1BjKlHZfvlIoddfyqWL0s4/j3+b3jkz/nrXoZXML9b6208/bs68pVzr+MFZo+v9FFsfdhPf2cr1e7rnS39ez6Z/I9O9t5ruZNYd1nWw/71yvP5PccD6HsVQgXZXOqLouMQMAwLFYH0OqFFK/H9+N6wMADsp6CynXz7OROsviAIDj4n5IAIBN2ENPDQCAEyCQAACbQCABADaBQAIAbAKBBADYBALp2DLZd+JoXW/PnOyXsTOu99e8gM0gkI6nULgg2St0W9IpdRY51zXWzA1qOaWeq/vhrvldTeVP6jYKnVpmM2sP53FXWLZtHPfzmOsaaxYv5tvI5rPM4nxuBrUAEwTSsVRK98u5K6zcGtl8i89jfSe77qCyODRKtyu4av6Kva97V/r9L/p5H5qpCqUbIt6V7t6ax3lcZtbPFJZxX3M8LZdNsNZKvZkXBvWA2bgw9jgypQ4sC9n3knHTz9tQ5DPn4eL7r0or8VwpnPKJdfsaF/0MzlrpHlLFxNpSup9NoZ8dZ+ZKW6K5pi+bvn7/uBhMK5U+h2ZifSkte6/UYWs5ox5ggi2k4yjj+Cr7MHJKd9atRvObU1P62QN0q9B2p+n693aj569KW0j5xNqF0pZXO5rWKvXdWE6sL6UepxulrdLhNAvVYHzTzzsGA6shkI4jj+P7ArWrOL4pHZ+qnr7yc/ngcaG0C28u/+S525N5fqKI4+bF9P75qfV7Xmm35UX2Jx9USqF3GzwHrIpAOh6/QM1aP2/ffVM6njFXqXTiwT3O52JQ9xkfx27i+7M3Xze1/lCnFEZXg3q9XGkrT0pbepXhPIBJCCT8pVBawV4UVlxF/LmeUdcNHmdK4VZr/rGpV7I49jPqv2NOfTd4/1UhMEqlXvTnquK4UDqu1s+3MKgPTEYgHUcXx6Vx3SqOncIK7KoUHqXmbw10CkFRx5/rF6+zUMZxO/H9/fvyF9P756fW7/nB4zqOb5ofGE5pGWQKYVQPplcz6wOzEEjH0cRxLbtjDk5hBeYVVlblYGjja8qZ82hi/VscctmEkh/9XCqdfdhOrHkf1HKjaU5pWdw1jx88bhW+BDjND4xC6fqvWumzrOP0UlwsixX9t3YDYKZRWKFXSisxr7SCuU6oWQ7eex9Nq5VOF75NqN3zg8eXWO8Sa3p9zsVxpXQKda60dVFNqNnrlLYSW/1cxrXS8Z5uxjykf3/vi0L785l1q8G4G03Llb503GbOB5iE65CO56p/V7qdph2DuCudJv3svY3SdTefcgrtqvQz7HKlcK0n1K30b/h6pWuTugk1x8pYKxvN46b5J2Q0ev4FIIvPZfp3mb3DKfUoUT6ZnsVp7YvpwOIIpGNyen09zicyhRWt/+M1U+fx6r1OaQX6KafU7t6UOu/IlE5CsJpHX++VXNN3Of71Xqdpyz2b8B7gHwQSgLlahS22y6qtwO5xUgOAOZzSWZLViu3AARBIAOaoBo+v4vgTZmCXHYCpnMLuOjd6vtIyXVjh4NhCAjCF0+v7bN1k060UToZAAvCpUn/fW+ouehDHh9hlh7Fc/5427Ufj8eOx36ZthdO8rni8bHol35JM6dRvN5rmlC4wzt6s5/X6GjbgHwQSxu6at6LutI/dNaXm90iQ6TgrW6fnx4Pm6mTXMSwOjl12GPNrNwCr8FrmtO1MnOCANxFIGHNrNwCrabRMb+u5CCW8gUACMHST7Q0Be8VCdXEgBBKAsYuW2aKpRPdC+AWBBOCZSsucRVhr2ZswYscIJACvVFqmF++L6PcOTxBIAF7xSncMtnbV/Fuy42AIJAC/6bRch6l37eOaNXwJgQRrfu0GwFyr5Xax3UUoISKQALzjrmVORnCi3ztEBBKAd920zLVETq97DseJEEgAPnHR/D4An8lEbw6nRyBhzK3dAGxerWWuUcpFKJ0agQRgilLhZAdrhZbZAsMOEEgYc2s3ALtRapkLZ0vR790pEUgApvIKWzTdArUr0e/d6RBIGHNrNwC74rVcbw616PfuVAgkDDmDGt6gxl64tRuwEZ2WuyvsRfR7dxoEEoacWMlimk7LBcdVy3VfhA0hkHBWbu0GHFCj5ULpJjpjPTwCCUPOoIY3qIH9umu54z530e/doRFIGMrWbsDOuLUbsFE3LXeG3F2E0mERSBhyBjW8QQ3s31XLXODqRGesh0UgYSgzqOENanyDW7sBJ1Brma6AnOiM9ZAIJAw5gxqdQY29cGs3YAcqLdPvXRbrugVqYyUEEoYygxqdQY1vcGs34ERKLdPvXSY6Yz0UAglDmUENb1DjG9xGapxFqWW+rOQilA6DQELPaf4K1utcW0gWNc7Ca7kuhgrRQ/ghEEjoOc1fwXbazxZStpEaZ9JpuR4XShFKu0cgoZcZ1OgManyLM6iRGdQ4m1bL9eZQittW7BqBhF5uUKM1qPENmWzCpDCocUZ3LdebQyVuW7FbBBJ6mUGN1qDGN+RGdZwIpaluWm5rpha3rdglAgm93KBGa1DjGyrDWqVhrbO5aLnjPhdx24rd+d/j8Vi7DVifUwgTN6NGq31sLWSyD85M+zmZY4tuWi7Ya3Gyw26whQQprFDdzBrt7FZ8x3WBmpcFap5JpeX+fq5iK3Y3CCRINrvrGoMaSyu1zFZcJXqgnqvUcmdp3rSPrffTI5Ag2fyztgY1lpRp2V03S9Y+A6/lLpyVwpl9xUK1YYRAgjT/232rbV+D5LR89zKZCKW5Oi27e+0utmQ3jUBCpvmnfDezW7GcTKF92RfmVYpQmqsVoXRaBBJKgxqNQY0l5PpeGPVKca+euRotd8q2Ezf42ywCCcXM93ttM5BqrXe/nELLdpFzBnctd/ai0/e/qOANBNK5ZZofSPfZrbDjFIKo1fqnYjuFU44bcdrxVFct15uDE1tKm8OFsedWa/6Ku9B6Z9g5hRVKruVO6bbiFVaAjcLy8uJi2nfdtFyodwp/N36h+vgAgXRujeYd4G31vRDIlcLTxXGm/R6r8fp5ZmKn8AXBf70l+3DXcn9rnQilTSCQzivX/GM/lb63y+6i43eYWWqbx+O2wGnZ4z6dCKXV/bd2A7Caaub7vb57/OgW5+mUtorcYPrw8bOf96BbuwEb5pUC2y1QP1P4ey5FKK2GLaRzcprfmepF3AwN35dr2a3IVoTSajjL7pwqzQsjLy4AxTpaLXvWYi6uI1sNgXRO1cz338Q3SKyn0bLHE3MRSqsgkM6n0rwDw17sqsP6blr2WrNchNLXEUjnU898/1VsHWEbrlr2y1EuQumrOKnhXCrN+wfuRMeU2J6blj2u1IlTwr+CQDoPp/ln1lXaVldBQO+uZS/S7kQoLY5ddudx0bwwakQYYbtKLXs6eKb1Ous9DbaQziHX/H/WTHw7xPY1Wna3cqdlb7d+amwhncNt5vtrEUbYh1LLdvabiVtXLIZAOr6b5v3z3MVFsNgPr+W3YJyW3xI7JQLp2C6ad/ZRp+N3aIrj8QonIHQLzsOJ26GbI5COq9L8MKnErjrsk9d3QqnRtu/DtSsE0jFVmn/BYKX1brwHWPD6zg0k7+KuwCYIpOOpND+MLuIUbxyD1/InOkjhOGu18DwOj0A6llrzw+hqUAPYEq/vhNJVHHOdheuQjuOq+d/QLiKMcGx3LX/M56plO349LAJp/zKF3QX5zDq1OL0b53DT8sd87mIX3sfYZbdvpeZfD+FjndvMtgB7UWn5Y6Sl6Cn8YwTSPmUKAXLT/P7pci3bBxiwRZWW/xJWKIRStvB8DoNddvviFHat1Qa1LuJ4EVBr+eM9Xt85qWL3CKR9yBW+0VUGtRqFf8DWoBZwBJW+8+WsEpdT/IpA2i6n8K2qkk33JF4hiG4GtYCjKfSdsLiIPRMvEUifKZROJGhl3y1JNphHYVj3Km49Dvwl1/zOiN9xF2fgPUUgvc/p3zuudvG54eA/rFko/CP0Y0tXhX+wzrgucFRO3+k0tVUIpW7h+ewKgfS+XO+djeYV/sj8YOi5wTjXMqeEeoUQuootImCqm77TP10ljiv9fwTSZyrZHdOx1ij8Yd9FEAEWan2nx4Wb6HJIEoE0Va4QTIXWvcagVQqhbsV2AEdVaP71fu9oFUKpXXg+m0YgzZcrnYSQLzwvr/AH24gQAr4lk033XO+46MRn4RFItpzCH20/ZHFwH9Two6FVOnmiE7vjgLVc9Z2z4xqFraXuC/PaFALpO7I4di+m+xdjANtS6nvX8l10sq0lAgkAPpMpBEXxhXm1CsHUfGFeqyOQAGCaWt+779E9zqv70vxWQSABwHS5wtZS/qX5XXXgawwJJACYr46D+8K8vA568TuBBAA2MoXdauWX5ucVduVddZBdeQQSANjKFYKp+OI87wpbTc0X52mOQAKAZRQKwZR/cZ6dQjDdtcOtJgIJAJZVKhxfyr8830YhmBrtJJwIJAD4jkIhmIoV5t0qhVO7wvzfQiABwHflCl0QlfrOWXljXun+bY3C1lO3Qjv+QSABwDqcQihVWv+WNl4pmDqlvjS70evcaGhleD8nAgkA1pcrhFOpdW9p86lGhqe5E0gAsC25vndLm7lqGXY2SyABwHZlCsFUKN3SZi1e6VY4jdItccwQSACwH5lCMBWDx5L9yRFeKXAa/Ty2tBgCCQD2zSkF0vDxcPor/snjTiv1kUcgAQA24f/WbgAAABKBBADYCAIJALAJ/63dAGxOpXD2zlWfHdjMFK5JeKZVuJr7k3pSuh4jH9VpP6zTK5W6a/Gxzm1CuyT75dS35z6hLX3dUqmftE6p77JP61RKy7xT6qQTWBQnNWAoU1rZXxRWtu8qlEKnU1rpu1jXK6wwW73nqrBilNJZP3n8uYnT/Adtuw3a1Lcvi9Mv+ux3zWSznPyopuJztT4LgItSyHX6uaxahWXVvVGnVLrIsY1jF9t2V/o8gGU8Hg8Ghn64Ph6P7vF43OP4k/fmj8fDPx6P8pdpzZu1bvH1l8fj4UbTqg9r9fPuHo9HMZrm4ryuX1xOxR/LqYnTqw/a4uN4vKzKOK19Mu3Z0C/X8WvzOHzyezIwfDys3gCGzQzukUIge7xeab4a8sfvK9L7472Vdxnr1DNf0w9tnK8zXk71xOVUvPGeJr7mrzb3ta4zX6PB7/Lq82NgWHzgpAb0qji+KXUPcplQxz95LlPYVdW+8f461rj+8pq7QhvrP2rlmnac5zdVHN+Url6/GNXu9fXKN9vy2/wbpV2cv/FxXGtfnXviQAgk9Gr9vLPkVSlI3uEGdW4KodEPbaxbvVEn13vB1ej5VenjWv1rf/NbjbE61vPx54s+W07vaOP4r5q53ruqvonj7JfXeKUwapW+kPzVBsAMgQQpnXlWD567a9q3f6d/V/Cd0tlbVrxRnavePxOtkt1y+o1f6LV/uSmE3EU/T65oRTDhCzjtG1JamRaj5zulXobbP2r4Qa37i3lclHoKfqXTe7uMCv17ptqzWtLv7Xdvzk9KQVQ8mU8R63SaL4/j9o/X9fN9t55/47WdQkhfFZZNER/flc6WBBbBFhIKpRXNZTTk8TX1B/Xci+evg/n95qZ0Tc0reRzuf9RqlL7p/8b/MV16bzld3qjzjjqO73+87jZ6/TOZwrJs9HmYeP083Tv/8P3ARwgk1ErXrWRPhpvSLr13+BfPl3Hc/fH+a3xNP9+xXOk6nssb7amVrqNxT6a7F8+PXbT8cnIKv3+ptBx+c1cImoue7w7NlbZG6z9qZfE17sm0Io7/ag8wCxfGnluutEK7vnhNptSjQf1LrULpeEP7ZD653j8W4WKtXKmngGGdTmEFPJ7PK5XS79coXRhbDOZV/fL+XMssp270/jw+vur9rS0X51no+bLyCr9bo9/lg9c0+nliRa6/fy9gNgLp3GqFFU6l33fnXPXebrRrfOxG0zqFlfDt7ZYFlX52HdTXuT557V8ypd/X6WdXPfc/3tu/r9Jyy8krBMFN07ZESv3b5c9dn3WNlCkt875tXaxxm9Am4CMEEgBgEziGBADYBAIJALAJBBIAYBMIJADAJhBIAIBNIJAAAJtAIAEANoFAAgBsAoEEANgEAgkAsAkEEgBgEwgkAMAmEEgAgE0gkAAAm0AgAQA2gUACAGwCgQQA2AQCCQCwCQQSAGATCCQAwCYQSACATfh/0kXvCZz8o8QAAAAASUVORK5CYII=" alt="Juan Pablo Rincón Cardona Abogados" width="420" height="299"></a>
+    <nav aria-label="Secciones">
+      <a href="#areas">Áreas</a>
+      <a href="#urgencias">Urgencias penales</a>
+      <a href="#metodo">Cómo trabajamos</a>
+      <a href="#programa">Programa</a>
+      <a href="#firma">El director</a>
+    </nav>
+    <a class="btn" href="#contacto">Agendar cita</a>
+  </div>
+</header>
+
+<main>
+<section class="inicio" id="inicio">
+  <div class="pag heroe">
+    <div class="sube">
+      <span class="rot">Juan Pablo Rincón Abogados · Medellín</span>
+      <h1>Cuando el asunto es serio, <em>cuente con nosotros.</em></h1>
+      <p class="entrada">Una firma dirigida por Juan Pablo Rincón Cardona, con abogados especialistas en cada área, para los momentos en que una decisión jurídica pesa: una captura, una demanda, una herencia, un contrato, un inmueble.</p>
+      <div class="acc">
+        <a class="btn" href="#contacto">Escribir a la secretaría <span class="fl" aria-hidden="true">→</span></a>
+        <a class="btn sec" href="#firma">Conocer al director</a>
+      </div>
+      <div class="cifras num">
+        <div><b>+100</b><span>Clientes<br>representados</span></div>
+        <div><b>8</b><span>Áreas<br>de práctica</span></div>
+      </div>
+      <p class="dato">Atención con cita previa. Calle 33A No. 71A – 43, Laureles, Medellín.</p>
+    </div>
+    <figure class="foto sube r2">
+      <div class="img"><img src="img/director.jpg" alt="Juan Pablo Rincón Cardona, director de la firma, sentado en un sillón" width="724" height="1086"></div>
+      <figcaption>
+        <strong>Juan Pablo Rincón Cardona</strong>
+        <span class="rot">Director · Especialista en derecho procesal penal</span>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="pag banda sube r3">
+    <span class="rot">Ocho componentes, una sola firma</span>
+    <div class="indice">
+      <a href="#areas" data-area="penal"><span class="n">Penal</span><span class="fl" aria-hidden="true">→</span><span class="d">Defensa, víctimas y extinción de dominio</span></a>
+      <a href="#areas" data-area="constitucional"><span class="n">Constitucional</span><span class="fl" aria-hidden="true">→</span><span class="d">Tutelas, derechos de petición, habeas corpus</span></a>
+      <a href="#areas" data-area="laboral"><span class="n">Laboral</span><span class="fl" aria-hidden="true">→</span><span class="d">Contratos, reglamentos y reclamaciones</span></a>
+      <a href="#areas" data-area="comercial"><span class="n">Comercial</span><span class="fl" aria-hidden="true">→</span><span class="d">Contratos, sociedades y consumidor financiero</span></a>
+      <a href="#areas" data-area="civil"><span class="n">Civil</span><span class="fl" aria-hidden="true">→</span><span class="d">Ejecutivos, responsabilidad civil y familia</span></a>
+      <a href="#areas" data-area="sucesoral"><span class="n">Sucesoral</span><span class="fl" aria-hidden="true">→</span><span class="d">Sucesiones notariales y judiciales</span></a>
+      <a href="#areas" data-area="inmobiliario"><span class="n">Inmobiliario</span><span class="fl" aria-hidden="true">→</span><span class="d">Promesas, compraventas y estudio de títulos</span></a>
+      <a href="#areas" data-area="registral"><span class="n">Registral</span><span class="fl" aria-hidden="true">→</span><span class="d">Trámites ante Registro de Instrumentos Públicos</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="pag">
+
+<section class="sec-m" id="areas">
+  <span class="rot">Áreas de práctica</span>
+  <div class="cuerpo">
+    <header>
+      <h2>Un mismo criterio para <em>cada frente</em> de su vida jurídica.</h2>
+      <p class="entrada">Cada área está a cargo de abogados especialistas de la firma. Elija una para ver los asuntos que atendemos y las normas con las que trabajamos a diario.</p>
+    </header>
+    <div class="areas">
+      <div role="tablist" aria-label="Áreas de práctica" id="tabs"></div>
+      <div class="ficha" role="tabpanel" id="ficha" tabindex="0" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-m" id="urgencias">
+  <span class="rot">Urgencias penales</span>
+  <div class="cuerpo">
+    <header>
+      <h2>Tras una captura, el reloj corre: <em>36 horas.</em></h2>
+      <p class="entrada">Es el plazo máximo para que la persona capturada sea puesta a disposición de un juez de control de garantías (artículo 28 de la Constitución Política; artículos 297 y 302 de la Ley 906 de 2004). Lo que se haga y se diga en ese tiempo marca el resto del proceso.</p>
+    </header>
+
+    <div class="plazo">
+      <div class="plazo-top">
+        <div class="campo">
+          <label for="captura">Fecha y hora de la captura</label>
+          <input type="datetime-local" id="captura">
+        </div>
+        <div class="vence" aria-live="polite">
+          <span class="rot" id="vence-rot">Ejemplo · el plazo vence</span>
+          <p class="gr" id="vence-gr"></p>
+          <p class="ch" id="vence-ch"></p>
+        </div>
+      </div>
+      <div>
+        <div class="regla" role="img" aria-label="Avance de las 36 horas" id="regla"><i id="regla-i"></i></div>
+        <div class="escala num" aria-hidden="true"><span>Captura</span><span>6 h</span><span>12 h</span><span>18 h</span><span>24 h</span><span>30 h</span><span>36 h</span></div>
+      </div>
+      <p class="nota">Cálculo de referencia: 36 horas contadas desde la hora que usted indique. No reemplaza la revisión del caso; cuándo empieza a contarse el término y si se respetó es justamente lo que se discute ante el juez.</p>
+    </div>
+
+    <div class="dos">
+      <div class="lista-t">
+        <h3>Derechos de la persona capturada</h3>
+        <ul>
+          <li><b>·</b><span>Conocer el hecho que se le atribuye y quién ordenó la captura.</span></li>
+          <li><b>·</b><span>Indicar a qué persona se le debe avisar de su aprehensión.</span></li>
+          <li><b>·</b><span>Guardar silencio. Lo que diga puede usarse en su contra.</span></li>
+          <li><b>·</b><span>Designar un abogado de confianza y entrevistarse con él en el menor tiempo posible.<small>Artículo 303 de la Ley 906 de 2004</small></span></li>
+        </ul>
+      </div>
+      <div class="lista-t">
+        <h3>Las audiencias que siguen</h3>
+        <ol>
+          <li><b>1</b><span>Legalización de la captura.<small>El juez verifica que se hizo conforme a la ley.</small></span></li>
+          <li><b>2</b><span>Formulación de imputación.<small>La Fiscalía comunica los hechos y los delitos. Artículo 286.</small></span></li>
+          <li><b>3</b><span>Solicitud de medida de aseguramiento.<small>Se decide si la persona enfrenta el proceso en libertad. Artículo 306.</small></span></li>
+        </ol>
+      </div>
+    </div>
+    <div><a class="btn" id="wa-urg" href="https://wa.me/573161467923" target="_blank" rel="noopener">Hay una captura: escribir ahora <span class="fl" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="sec-m" id="metodo">
+  <span class="rot">Cómo trabajamos</span>
+  <div class="cuerpo">
+    <header>
+      <h2>Todo por escrito, <em>antes de empezar.</em></h2>
+      <p class="entrada">Usted sabe qué vamos a hacer, cuánto cuesta y cómo se paga antes de firmar cualquier documento.</p>
+    </header>
+    <ol class="pasos">
+      <li><b>1</b><div><h3>Primer contacto</h3><p>Escribe a la secretaría por WhatsApp y cuenta en pocas líneas de qué se trata. Le asignamos cita.</p></div></li>
+      <li><b>2</b><div><h3>Consulta</h3><p>Escuchamos el caso, revisamos los documentos que tenga y le decimos con franqueza dónde está parado.</p></div></li>
+      <li><b>3</b><div><h3>Oferta de servicios</h3><p>Recibe un documento con el alcance del encargo, los honorarios, la forma de pago y el plazo estimado.</p></div></li>
+      <li><b>4</b><div><h3>Contrato y poder</h3><p>Si acepta, firmamos el contrato de prestación de servicios y el poder para actuar en su nombre.</p></div></li>
+      <li><b>5</b><div><h3>Seguimiento</h3><p>Le informamos cada actuación relevante y las fechas de audiencia con anticipación.</p></div></li>
+    </ol>
+    <div class="cita">
+      <p>La obligación del abogado es de medio y no de resultado. Por eso lo que dejamos por escrito es el trabajo que haremos.</p>
+      <span>Así lo consigna cada una de nuestras ofertas de servicios.</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec-m" id="programa">
+  <span class="rot">Programa de membresía</span>
+  <div class="cuerpo">
+    <header>
+      <span class="rot" style="color:var(--champan)">Sierra &amp; Asociados en conjunto con Juan Pablo Rincón Abogados</span>
+      <h2>Programa de Protección Jurídica <em>Integral®</em></h2>
+      <p class="entrada">Abogado y contador de cabecera por una mensualidad fija. Un solo programa para personas, familias, comerciantes y empresarios, con tres niveles acumulativos: cada uno incluye todo lo del anterior.</p>
+    </header>
+    <div class="niveles">
+      <article class="nivel">
+        <span class="rot">Nivel uno</span>
+        <h3>Select</h3>
+        <p class="precio num">$400.000<small>COP / mes</small></p>
+        <ul>
+          <li><b>Cobertura:</b> el titular</li>
+          <li><b>3</b> consultorías contables al mes</li>
+          <li>Descuento en la declaración de renta</li>
+        </ul>
+      </article>
+      <article class="nivel">
+        <span class="rot">Nivel dos</span>
+        <h3>Élite</h3>
+        <p class="precio num">$800.000<small>COP / mes</small></p>
+        <ul>
+          <li><b>Cobertura:</b> titular y cónyuge o pareja</li>
+          <li><b>5</b> consultorías contables al mes</li>
+          <li>Declaración de renta del titular incluida</li>
+        </ul>
+      </article>
+      <article class="nivel alto">
+        <span class="rot">Nivel tres</span>
+        <h3>Signature</h3>
+        <p class="precio num">$1.200.000<small>COP / mes</small></p>
+        <ul>
+          <li><b>Cobertura:</b> titular, cónyuge o pareja, padres e hijos</li>
+          <li>Consultorías contables <b>ilimitadas</b></li>
+          <li>Renta del titular y de otra persona designada</li>
+          <li><b>Disponibilidad 24 horas</b> y atención inmediata en caso de captura o urgencia</li>
+        </ul>
+      </article>
+    </div>
+    <p class="nota">Aplican términos y condiciones. Ningún nivel tiene cláusula de permanencia. Áreas jurídicas del programa: penal, constitucional, laboral, comercial, civil, sucesoral, inmobiliario y registral.</p>
+    <div><a class="btn sec" id="wa-prog" href="https://wa.me/573161467923" target="_blank" rel="noopener">Pedir el portafolio del programa <span class="fl" aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+
+<section class="sec-m" id="firma">
+  <span class="rot">El director</span>
+  <div class="cuerpo">
+    <header>
+      <h2>Juan Pablo Rincón Cardona, <em>al frente de la firma.</em></h2>
+    </header>
+    <div class="firma">
+      <figure class="oleo"><img src="img/retrato-oleo.jpg" alt="Retrato al óleo de Juan Pablo Rincón Cardona en su despacho" width="900" height="1352"></figure>
+      <div class="txt">
+        <p><b>Abogado especialista en derecho procesal penal.</b> Fundó y dirige Juan Pablo Rincón Abogados, con sede en Laureles, Medellín. Su ejercicio se ha concentrado en la defensa penal, la representación de víctimas y los procesos de extinción de dominio, y desde allí traza la estrategia de la firma.</p>
+        <dl class="equipo">
+          <div><dt>Especialización</dt><dd>Derecho procesal penal.</dd></div>
+          <div><dt>Diplomado</dt><dd>Extinción de dominio. Universidad Externado de Colombia.</dd></div>
+          <div><dt>Estudios</dt><dd>Teoría del delito.</dd></div>
+          <div><dt>Tarjeta profesional</dt><dd>No. 438.368 del Consejo Superior de la Judicatura.</dd></div>
+        </dl>
+        <div class="equipo-t">
+          <h3>El equipo</h3>
+          <p>Con él trabaja un equipo de abogados especialistas y magíster, cada uno a cargo de los asuntos de su área, y una secretaría que coordina la agenda y la atención de los clientes.</p>
+        </div>
+        <ul class="principios" aria-label="Principios de la firma">
+          <li>Efectividad</li><li>Responsabilidad</li><li>Ética profesional</li><li>Honestidad</li><li>Confiabilidad</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-m" id="contacto" style="border-bottom:0">
+  <span class="rot">Contacto</span>
+  <div class="cuerpo">
+    <header>
+      <h2>Cuéntenos de qué se trata. <em>Le asignamos cita.</em></h2>
+      <p class="entrada">Llene estos datos y la página arma el mensaje para la secretaría. Se envía desde su propio WhatsApp; aquí no se guarda nada de lo que escriba.</p>
+    </header>
+    <div class="contacto">
+      <form class="form" id="form" novalidate>
+        <div class="fila">
+          <div class="campo"><label for="f-nombre">Su nombre</label><input id="f-nombre" type="text" autocomplete="name" placeholder="Nombre y apellido"></div>
+          <div class="campo"><label for="f-area">Área del asunto</label><select id="f-area"></select></div>
+        </div>
+        <div class="campo"><label for="f-msg">De qué se trata, en pocas líneas</label><textarea id="f-msg" placeholder="Por ejemplo: me notificaron una demanda ejecutiva y tengo diez días para contestar."></textarea></div>
+        <label class="chk" for="f-urg"><input type="checkbox" id="f-urg"><span>Es urgente: hay una persona capturada o una audiencia en los próximos días.</span></label>
+        <div class="campo"><span class="lab">Así llegará su mensaje</span><div class="previa" id="previa"></div></div>
+        <div class="acc">
+          <a class="btn" id="wa-form" href="https://wa.me/573161467923" target="_blank" rel="noopener">Abrir WhatsApp con este mensaje <span class="fl" aria-hidden="true">→</span></a>
+          <button class="btn sec" type="button" id="copiar">Copiar mensaje</button>
+        </div>
+      </form>
+      <dl class="oficina">
+        <div><dt class="rot">Secretaría · WhatsApp</dt><dd class="num">316 146 7923</dd><small>Canal de entrada para citas y consultas.</small></div>
+        <div><dt class="rot">Celular del director</dt><dd class="num">301 744 5460</dd></div>
+        <div><dt class="rot">Correo</dt><dd style="font-size:20px">juanpablorinconabogado@gmail.com</dd></div>
+        <div><dt class="rot">Oficina</dt><dd class="txt">Calle 33A No. 71A – 43<br>Laureles, Medellín</dd><small>Atención únicamente con cita previa. <a href="https://maps.app.goo.gl/oepVBKGpDa2KkF6n8" target="_blank" rel="noopener">Ver la ubicación en el mapa</a></small></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer style="border-top:1px solid var(--linea)">
+  <div class="pag">
+    <img src="data:image/png;base64,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" alt="Juan Pablo Rincón Cardona Abogados" width="420" height="299">
+    <div>
+      <p><b>Juan Pablo Rincón Abogados.</b> Calle 33A No. 71A – 43, Laureles, Medellín, Antioquia. Juan Pablo Rincón Cardona, T.P. No. 438.368 del C.S. de la J.</p>
+      <p>La información de este sitio es de carácter general y no constituye asesoría jurídica ni crea una relación abogado-cliente. Ningún contenido promete o garantiza un resultado. Los datos personales que usted comparta con la firma se tratan conforme a la Ley 1581 de 2012.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var WA = "https://wa.me/573161467923";
+  var AREAS = [
+    {id:"penal", n:"Penal", t:"Defensa de confianza y representación de víctimas",
+     p:"Es el área principal de la firma. Actuamos en el sistema penal acusatorio desde la primera audiencia hasta la segunda instancia, del lado de la defensa o del lado de la víctima.",
+     a:["Defensa en audiencias preliminares, acusación, preparatoria y juicio oral","Representación de víctimas e incidente de reparación integral","Procesos de extinción de dominio","Responsabilidad penal para adolescentes","Recursos y segunda instancia"],
+     l:"Ley 906 de 2004 · Ley 599 de 2000 · Ley 1708 de 2014 · Ley 1098 de 2006"},
+    {id:"constitucional", n:"Constitucional", t:"Acciones para proteger derechos fundamentales",
+     p:"Cuando una entidad o un particular vulnera un derecho fundamental o no responde, estas son las herramientas más rápidas que da la Constitución.",
+     a:["Acción de tutela e impugnación del fallo","Derecho de petición y réplica frente a respuestas incompletas","Habeas corpus","Incidente de desacato"],
+     l:"Decreto 2591 de 1991 · Ley 1755 de 2015 · Ley 1095 de 2006"},
+    {id:"laboral", n:"Laboral", t:"Relaciones de trabajo, para empleadores y trabajadores",
+     p:"Prevenimos el conflicto con documentos bien hechos y lo atendemos cuando ya existe.",
+     a:["Contratos de trabajo y de prestación de servicios","Reglamento Interno de Trabajo","Contrato realidad y reajustes salariales","Terminación del contrato y liquidaciones","Requerimientos y fiscalizaciones de la UGPP"],
+     l:"Código Sustantivo del Trabajo · Código Procesal del Trabajo y de la Seguridad Social"},
+    {id:"comercial", n:"Comercial", t:"Contratos y negocios con respaldo jurídico",
+     p:"Redactamos, revisamos y negociamos los documentos que sostienen su actividad económica, y reclamamos cuando la otra parte incumple.",
+     a:["Contratos comerciales: arrendamiento, suministro, servicios, vehículos","Marco contractual para artistas y eventos","Constitución y reformas de sociedades","Reclamaciones del consumidor financiero ante bancos","Cobro de cartera"],
+     l:"Código de Comercio · Ley 1258 de 2008 · Ley 1328 de 2009"},
+    {id:"civil", n:"Civil", t:"Procesos civiles y asuntos de familia",
+     p:"Demandamos y defendemos en procesos civiles, y acompañamos los trámites de familia que se pueden resolver por acuerdo.",
+     a:["Procesos ejecutivos, como demandante o demandado","Responsabilidad civil y accidentes de tránsito","Reclamaciones ante aseguradoras","Conflictos de propiedad horizontal","Divorcio de mutuo acuerdo y permisos de salida del país"],
+     l:"Código Civil · Código General del Proceso · Ley 675 de 2001"},
+    {id:"sucesoral", n:"Sucesoral", t:"Sucesiones ordenadas, de principio a fin",
+     p:"Llevamos la sucesión ante notaría cuando hay acuerdo entre los herederos y ante juez cuando no lo hay.",
+     a:["Sucesión notarial de mutuo acuerdo","Sucesión judicial","Inventarios, avalúos y trabajo de partición","Liquidación de la sociedad conyugal dentro de la sucesión","Testamentos"],
+     l:"Código Civil · Decreto 902 de 1988 · Código General del Proceso"},
+    {id:"inmobiliario", n:"Inmobiliario", t:"Comprar, vender y arrendar con seguridad",
+     p:"Revisamos el inmueble y redactamos el negocio antes de que usted entregue dinero o firme.",
+     a:["Estudio de títulos","Promesas de compraventa","Compraventa y acompañamiento en la escrituración","Contratos de arrendamiento","Reclamaciones por deficiencias constructivas"],
+     l:"Código Civil · Ley 820 de 2003 · Ley 1480 de 2011"},
+    {id:"registral", n:"Registral", t:"El folio de matrícula, al día",
+     p:"Lo que no está registrado no es oponible a terceros. Gestionamos las anotaciones que su inmueble necesita ante la Oficina de Registro de Instrumentos Públicos.",
+     a:["Estudio del folio de matrícula inmobiliaria","Corrección y actualización de anotaciones","Cancelación de gravámenes y medidas cautelares","Recursos frente a notas devolutivas"],
+     l:"Ley 1579 de 2012, Estatuto de Registro de Instrumentos Públicos"}
+  ];
+  var $ = function(id){return document.getElementById(id)};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+  /* Áreas */
+  var tabs=$("tabs"), ficha=$("ficha"), sel=$("f-area"), actual="penal";
+  AREAS.forEach(function(a){
+    var b=document.createElement("button");
+    b.type="button";b.id="tab-"+a.id;b.setAttribute("role","tab");b.setAttribute("aria-controls","ficha");b.textContent=a.n;
+    b.addEventListener("click",function(){elegir(a.id)});
+    tabs.appendChild(b);
+    var o=document.createElement("option");o.value=a.n;o.textContent=a.n;sel.appendChild(o);
+  });
+  var otro=document.createElement("option");otro.value="No estoy seguro";otro.textContent="No estoy seguro";sel.appendChild(otro);
+  function elegir(id){
+    var a=AREAS.filter(function(x){return x.id===id})[0]||AREAS[0];actual=a.id;
+    Array.prototype.forEach.call(tabs.children,function(b){
+      var on=b.id==="tab-"+a.id;b.setAttribute("aria-selected",on?"true":"false");b.tabIndex=on?0:-1;
+    });
+    ficha.setAttribute("aria-labelledby","tab-"+a.id);
+    ficha.innerHTML='<h3>'+esc(a.t)+'</h3><p>'+esc(a.p)+'</p><ul>'+a.a.map(function(x){return '<li><span>'+esc(x)+'</span></li>'}).join("")+
+      '</ul><p class="normas"><b>Normas de referencia</b>'+esc(a.l)+'</p>'+
+      '<div><a class="btn sec" target="_blank" rel="noopener" href="'+WA+'?text='+encodeURIComponent("Buen día. Quisiera agendar una cita con la firma por un asunto de derecho "+a.n.toLowerCase()+".")+'">Consultar un asunto '+esc(a.n.toLowerCase())+' <span class="fl" aria-hidden="true">→</span></a></div>';
+  }
+  tabs.addEventListener("keydown",function(e){
+    var i=AREAS.map(function(a){return a.id}).indexOf(actual),d=0;
+    if(e.key==="ArrowDown"||e.key==="ArrowRight")d=1;else if(e.key==="ArrowUp"||e.key==="ArrowLeft")d=-1;else return;
+    e.preventDefault();var n=AREAS[(i+d+AREAS.length)%AREAS.length];elegir(n.id);$("tab-"+n.id).focus();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-area]"),function(l){
+    l.addEventListener("click",function(){elegir(l.getAttribute("data-area"));sel.value=AREAS.filter(function(x){return x.id===actual})[0].n;armar()});
+  });
+  elegir("penal");
+
+  /* 36 horas */
+  var H36=36*60*60*1000;
+  function plazo(capMs,ahoraMs){
+    var vence=capMs+H36, tr=ahoraMs-capMs;
+    return {vence:vence, transcurrido:tr, restante:vence-ahoraMs, pct:Math.max(0,Math.min(100,tr/H36*100)),
+            estado: tr<0?"futuro":(tr>=H36?"vencido":"corriendo")};
+  }
+  window.__plazo=plazo;
+  function hm(ms){var m=Math.floor(Math.abs(ms)/60000),h=Math.floor(m/60);m=m%60;return h+" h "+(m<10?"0":"")+m+" min"}
+  var fFecha=new Intl.DateTimeFormat("es-CO",{weekday:"long",day:"numeric",month:"long"});
+  var fHora=new Intl.DateTimeFormat("es-CO",{hour:"numeric",minute:"2-digit",hour12:true});
+  var inC=$("captura"), tocado=false;
+  function p2(n){return (n<10?"0":"")+n}
+  (function(){var d=new Date();d.setHours(8,0,0,0);if(d>new Date())d.setDate(d.getDate()-1);
+    inC.value=d.getFullYear()+"-"+p2(d.getMonth()+1)+"-"+p2(d.getDate())+"T08:00";})();
+  function pintar(){
+    var c=new Date(inC.value);
+    if(isNaN(c)){$("vence-gr").textContent="Indique la fecha y la hora de la captura.";$("vence-ch").textContent="";$("regla-i").style.width="0";return}
+    var r=plazo(c.getTime(),Date.now()), v=new Date(r.vence), ch=$("vence-ch");
+    $("vence-rot").textContent=(tocado?"":"Ejemplo · ")+(r.estado==="vencido"?"El plazo venció":"El plazo vence");
+    var f=fFecha.format(v);$("vence-gr").textContent=f.charAt(0).toUpperCase()+f.slice(1)+", "+fHora.format(v);
+    ch.className="ch"+(r.estado==="vencido"?" al":"");
+    ch.textContent = r.estado==="futuro" ? "La hora indicada todavía no ha llegado."
+      : r.estado==="corriendo" ? "Han pasado "+hm(r.transcurrido)+". Quedan "+hm(r.restante)+"."
+      : "Las 36 horas ya se cumplieron. Si la persona no ha sido presentada ante un juez, consulte de inmediato: la prolongación ilegal de la privación de la libertad es uno de los supuestos del habeas corpus (Ley 1095 de 2006).";
+    $("regla-i").style.width=r.pct+"%";
+    $("regla").setAttribute("aria-label","Ha transcurrido el "+Math.round(r.pct)+" por ciento de las 36 horas");
+  }
+  inC.addEventListener("input",function(){tocado=true;pintar()});
+  pintar();setInterval(pintar,60000);
+  $("wa-urg").href=WA+"?text="+encodeURIComponent("URGENTE. Hay una persona capturada y necesito hablar con un abogado de la firma.");
+  $("wa-prog").href=WA+"?text="+encodeURIComponent("Buen día. Quisiera recibir el portafolio del Programa de Protección Jurídica Integral.");
+
+  /* Mensaje para la secretaría */
+  var fN=$("f-nombre"), fM=$("f-msg"), fU=$("f-urg"), prev=$("previa"), texto="";
+  function armar(){
+    var n=fN.value.trim(), m=fM.value.trim();
+    texto=(fU.checked?"URGENTE. ":"")+"Buen día. "+(n?"Mi nombre es "+n+". ":"")+
+      "Quisiera agendar una cita con la firma."+
+      "\nÁrea: "+sel.value+
+      (m?"\nAsunto: "+m:"");
+    prev.textContent=texto;
+    $("wa-form").href=WA+"?text="+encodeURIComponent(texto);
+  }
+  [fN,fM,fU,sel].forEach(function(el){el.addEventListener("input",armar);el.addEventListener("change",armar)});
+  $("form").addEventListener("submit",function(e){e.preventDefault()});
+  $("copiar").addEventListener("click",function(){
+    var b=this, ok=function(){b.textContent="Mensaje copiado";setTimeout(function(){b.textContent="Copiar mensaje"},2200)};
+    var alt=function(){var r=document.createRange();r.selectNodeContents(prev);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Texto seleccionado: cópielo"};
+    try{navigator.clipboard.writeText(texto).then(ok,alt)}catch(e){alt()}
+  });
+  armar();
+})();
+</script>
+
+</body></html>
